@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  AutoWire -->
+	<!-- <bean id="b" class="com.brainmentors.apps.mavenapp.B" autowire="constructor">
+	<property name="obj" ref="c"/>
+	<constructor-arg name="" ref="" type="">
+	</constructor-arg>
+	</bean>
+	 <bean id="obj" class="com.brainmentors.apps.mavenapp.C">
+	</bean> 
+	<bean id="c2" class="com.brainmentors.apps.mavenapp.C">
+	</bean> -->
+	<!--  Collection -->
+	<bean id="b" class="com.brainmentors.apps.mavenapp.B">
+	<property name="clist">
+	<list>
+	<ref bean="c1"/>
+	<ref bean="c2"/>
+	<ref bean="c3"/>
+	</list>
+	</property>
+	</bean>
+	<bean id="c1" class="com.brainmentors.apps.mavenapp.C">
+	<property name="x" value="100"/>
+	</bean>
+	<bean id="c2" class="com.brainmentors.apps.mavenapp.C">
+	<property name="x" value="100"/>
+	</bean>
+	<bean id="c3" class="com.brainmentors.apps.mavenapp.C">
+	<property name="x" value="300"/>
+	</bean>
+	</beans>
