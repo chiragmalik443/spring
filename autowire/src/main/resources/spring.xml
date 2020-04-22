@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- <bean id="a" autowire="byType" class="com.brainmentors.apps.autowire.A"> -->
+	<bean id="a" autowire="byName" class="com.brainmentors.apps.autowire.A">
+	<!-- <property name="c" ref="c1"/> -->
+	<property name="clist">
+	<!-- <list>
+	<ref bean="c1"/>
+	<ref bean="c2"/>
+	<ref bean="c3"/>
+	</list> -->
+	<set>
+	<ref bean="c1"/>
+	<ref bean="c2"/>
+	<ref bean="c3"/>
+	</set>
+	</property>
+	</bean>
+	<bean id="b1" class="com.brainmentors.apps.autowire.B">
+	</bean>
+	<bean id="b2" class="com.brainmentors.apps.autowire.B">
+	</bean>
+	<bean id="c1" class="com.brainmentors.apps.autowire.C">
+	<property name="x" value="10"/>
+	</bean>
+	<bean id="c2" class="com.brainmentors.apps.autowire.C">
+	<property name="x" value="20"/>
+	</bean>
+	<bean id="c3" class="com.brainmentors.apps.autowire.C">
+	<property name="x" value="10"/>
+	</bean>
+	</beans>
